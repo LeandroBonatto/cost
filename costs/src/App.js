@@ -16,7 +16,7 @@ function App() {
         <Link to="/newproject">New Project</Link>
       </div>
       <Switch>
-        <Container>
+        <Container customClass="min-height">
           <Route exact path="/">
             <Home />
           </Route>
