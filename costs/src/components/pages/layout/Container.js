@@ -2,9 +2,7 @@ import styles from './Container.module.css'
 
 function Container(props) {
     return(
-        <div>
-            
-        </div>
+        <div className={styles.container}>{props.children}</div>
     )
 }
 
