@@ -3,7 +3,7 @@ import savings from '../../img/savings.svg'
 
 function Home() {
     return (
-        <section>
+        <section className={styles.home_container}>
             <h1>Welcome to <span>Costs</span></h1>
             <p>Start managing your projects</p>
             <a href="/">Create Projects</a>
