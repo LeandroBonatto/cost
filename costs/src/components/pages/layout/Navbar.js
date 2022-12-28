@@ -7,19 +7,19 @@ import logo from '../../../img/favicon.ico'
 
 function Navbar() {
     return(
-        <nav>
+        <nav class={styles.navbar}>
             <Container> 
                 <Link to="/">
                     <img src={logo} alt="costs"/>
                 </Link>    
-                <ul>
-                    <li>
+                <ul class={styles.list}>
+                    <li class={styles.item}>
                         <Link to="/">Home</Link>
                     </li>
-                    <li>
+                    <li class={styles.item}>
                         <Link to="/contact">Contact</Link>
                     </li>
-                    <li>
+                    <li class={styles.item}>
                         <Link to="/company">Company</Link>
                     </li>
                 </ul>
