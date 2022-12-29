@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 
 import Input from '../form/input'
@@ -10,6 +10,20 @@ import styles from './ProjectForm.module.css'
 function ProjectForm(btnText) {
 
     Const [ categories, setCategories ] = useState([])
+
+    useEffect(() => {
+        fetch("http://localhost:5000/categories",{
+            method:"GET",
+            headers: {
+                'Content-type': 'application/json'
+            }
+        })
+        .then((resp) => resp.json())
+        .then((data) => {
+            setCategories(data)
+        })
+        .catch((err) => console.log(err))
+    }, [])
 
     return (
         <form className={styles.form}>
@@ -25,7 +39,10 @@ function ProjectForm(btnText) {
                 name="name"
                 placeholder="Insert budget"
             />
-            <Select name="category_id" text="category selection " />
+            <Select name="category_id" 
+            text="category selection" 
+            options={categories}
+            />
             <SubmitButton text={btnText}/>
         </form>
     )
