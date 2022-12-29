@@ -1,20 +1,15 @@
 import styles from './Select.module.css'
 
-function Input({ type, text, name, placeholder, handleOnChange, value}) {
+function Select({ text, name, options, handleOnChange, value}) {
     return (
         <div className={styles.form_control} >
             <label htmlFor={name}>{text}</label>
-            <input 
-                type={text} 
-                name={name} 
-                id={name} 
-                placeholder={placeholder} 
-                onChange={handleOnChange} 
-                value={value}
-            />
+            <label htmlFor={name}>{text}:</label>
+            <select name={name} id={name}>
+                <option>Select an option</option>
+            </select>
         </div>
     )
-
 }
 
-export default Input
+export default Select
