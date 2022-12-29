@@ -1,3 +1,6 @@
+import { useState } from 'react'
+
+
 import Input from '../form/input'
 import Select from '../form/Select'
 import SubmitButton from '../form/SubmitButton'
@@ -5,6 +8,9 @@ import SubmitButton from '../form/SubmitButton'
 import styles from './ProjectForm.module.css'
 
 function ProjectForm(btnText) {
+
+    Const [ categories, setCategories ] = useState([])
+
     return (
         <form className={styles.form}>
             <Input 
