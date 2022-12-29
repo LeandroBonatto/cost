@@ -12,12 +12,13 @@ function ProjectForm() {
                 name="name"
                 placeholder="Insert project name"
             />
-            <Select />
-            <div>
-                <select name="category_id">
-                    <option disabled>Select category</option>
-                </select>
-            </div>
+            <Input 
+                type="number" 
+                text="budget"
+                name="name"
+                placeholder="Insert budget"
+            />
+            <Select name="category_id" text="category selection " />
             <div>
                 <input type="submit" value="Create project" />
             </div>
