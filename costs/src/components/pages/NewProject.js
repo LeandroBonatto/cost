@@ -16,9 +16,13 @@ function NewProject() {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json',
-            }
+            },
+            body: JSON.stringify(project),
         }).then(resp) => resp.json())
-        .then((data) => {})
+        .then((data) => {
+            console.log(data)
+            //redirect
+        })
         ).catch(err => console.log(err))
 
     }
@@ -27,7 +31,7 @@ function NewProject() {
     <div className={styles.newproject_container}>
         <h1>Create Project</h1>
         <p>Create your own project than add services</p>
-        <ProjectForm btnText="Create Project" />
+        <ProjectForm handleSubmit={createPost} btnText="Create Project" />
     </div>
     )
 }
