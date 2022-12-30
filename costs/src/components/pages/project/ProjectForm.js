@@ -29,6 +29,7 @@ function ProjectForm( handleSubmit, btnText, projectData ) {
     const submit(e) => {
         e.preventDefault()
         handleSubmit(project)
+        // handleSubmit(project)
     }
 
     function handleChange(e) {
@@ -36,6 +37,15 @@ function ProjectForm( handleSubmit, btnText, projectData ) {
         console.log(project)
     }
 
+    function handleCategory(e) {
+        setProject({
+            ...project, 
+            category: {
+                id: e.target.value,
+                name: e.target.options[e.target.selectedIndex].text,
+            },
+        })
+    }
 
 
     return (
@@ -46,6 +56,7 @@ function ProjectForm( handleSubmit, btnText, projectData ) {
                 name="name"
                 placeholder="Insert project name"
                 handleOnChange={handleChange}
+                value={project.name}
             />
             <Input 
                 type="number" 
@@ -53,10 +64,13 @@ function ProjectForm( handleSubmit, btnText, projectData ) {
                 name="name"
                 placeholder="Insert budget"
                 handleOnChange={handleChange}
+                value={project.name}
             />
             <Select name="category_id" 
             text="category selection" 
             options={categories}
+            handleOnChange={handleCategory}
+            value={project.category ? project.category.id : ''}
             />
             <SubmitButton text={btnText}/>
         </form>
