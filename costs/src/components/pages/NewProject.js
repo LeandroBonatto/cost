@@ -18,10 +18,12 @@ function NewProject() {
                 'Content-type': 'application/json',
             },
             body: JSON.stringify(project),
-        }).then(resp) => resp.json())
-        .then((data) => {
+        })
+            .then((resp) => resp.json())
+            .then((data) => {
             console.log(data)
             //redirect
+            history.push('projects', {message: 'Project sucessfully has been created'})
         })
         ).catch(err => console.log(err))
 
